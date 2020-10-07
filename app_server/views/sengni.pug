@@ -1,5 +1,6 @@
 extends layout
 
+include -includes/sharedHTMLfunctions
 block content
     .row.banner  
         .col-12
@@ -8,21 +9,16 @@ block content
     .row
         .col-12.col-md-8
             each location in locations
-                .card(style="background-color:lightblue")
-                    .card-block(style="margin:1em 1em 1em 1em")
+                .card
+                    .card-block
                         h4
                             a(href="/sengalam")= location.name
-                            small &nbsp;
-                                i.fas.fa-star
-                                i.fas.fa-star
-                                i.fas.fa-star
-                                i.far.fa-star
-                                i.far.fa-star
+                            +outputRating(location.rating)
                             span.badge.badge-pill.badge-default.float-right(style="background-color:red;radius:50%") 100m
                         p.address= location.address
                         .facilities
                             each facility in location.facilities 
-                                span.badge.badge-warning(style="margin:1px 1px 1px 1px")= facility
+                                span.badge.badge-warning= facility
         .col-12.col-md-4
             p Ndai app hpe lang nna tinang na makau grup yin na myu sha seng ni hpe tam la ga.
             
