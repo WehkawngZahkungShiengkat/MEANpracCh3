@@ -1,18 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const ctrlothers = require('../controllers/others');
-const ctrllocations = require('../controllers/locations');
+const ctrlLocations = require('../controllers/locations');
+const ctrlOthers = require('../controllers/others');
 
-/* GET about page. */
-router.get('/', ctrlothers.about);
+router.get('/', ctrlLocations.homelist);
+router.get('/location/:locationid', ctrlLocations.locationInfo);
+router
+  .route('/location/:locationid/review/new')
+  .get(ctrlLocations.addReview)
+  .post(ctrlLocations.doAddReview);
 
-/* GET Sengni page. */
-router.get('/sengni', ctrllocations.sengni);
-
-/* GET Seng a lam page. */
-router.get('/sengalam', ctrllocations.sengalam);
-
-/* GET Ning mu page. */
-router.get('/ningmu', ctrllocations.ningmu);
+router.get('/about', ctrlOthers.about);
 
 module.exports = router;

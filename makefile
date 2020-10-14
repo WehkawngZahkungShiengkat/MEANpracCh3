@@ -1,3 +1,5 @@
+export DB_HOST=database
+
 default: build
 
 build:
