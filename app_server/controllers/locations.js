@@ -15,7 +15,7 @@ const formatDistance = (distance) => {
   } else {
     thisDistance = Math.floor(distance);
   }
-  return 20+'m'//thisDistance + unit;
+  return thisDistance + unit;
 };
 
 const showError = (req, res, status) => {
