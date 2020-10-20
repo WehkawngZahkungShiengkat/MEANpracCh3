@@ -1,0 +1,22 @@
+<div class="error">{{message}}</div>
+<div class="card" *ngFor="let location of locations">
+    <div class="card-block">
+    <h4>
+    <a href="/location/{{location._id}}">{{location.name}}</a>
+    <small>&nbsp;
+    <i class="fa{{ location.rating >= 1 ? 's' : 'r' }} fa-star"></i>
+    <i class="fa{{ location.rating >= 2 ? 's' : 'r' }} fa-star"></i>
+    <i class="fa{{ location.rating >= 3 ? 's' : 'r' }} fa-star"></i>
+    <i class="fa{{ location.rating >= 4 ? 's' : 'r' }} fa-star"></i>
+    <i class="fa{{ location.rating >= 5 ? 's' : 'r' }} fa-star"></i>
+
+    </small>
+    <span class="badge badge-pill badge-default float-right">{{location.distance | distance}}</span>
+    </h4>
+    <p class="address">location.address</p>
+    <div class="facilities">
+        <span class="badge badge-warning" *ngFor="let facility of location.facilities">{{facility}}</span>
+    </div>
+    </div>
+</div>
+   
