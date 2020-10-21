@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const readLine = require('readline');
+require('dotenv').config();
 
-let dbURL = 'mongodb+srv://we-z:we-z40063Mongodb@cluster0.5iai4.mongodb.net/test'; //'mongodb://127.0.0.1/Loc8r';
+let dbURL = process.env.Mongo_C; //'mongodb://127.0.0.1/Loc8r';
 if (process.env.NODE_ENV === 'production') {
   dbURL = process.env.DB_HOST || process.env.MONGODB_URI;
 }
@@ -60,3 +61,4 @@ process.on('SIGTERM', () => {
 connect();
 
 require('./locations');
+require('./users');

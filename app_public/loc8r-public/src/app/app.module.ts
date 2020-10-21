@@ -20,6 +20,8 @@ import { DetailsPageComponent } from './details-page/details-page.component';
 import { MostRecentFirstPipe } from './most-recent-first.pipe';
 import { RatingStarsComponent } from './rating-stars/rating-stars.component';
 import { from } from 'rxjs';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { from } from 'rxjs';
     LocationDetailsComponent,
     DetailsPageComponent,
     MostRecentFirstPipe,
-    RatingStarsComponent
+    RatingStarsComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

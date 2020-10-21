@@ -13,7 +13,7 @@ export class GeolocationService {
     console.log("I am if getPosition");
     } else {
     cbNoGeo();
-    console.log("I am else geoPosition");
+    console.log("I am else geoPosition")
     }
   }
 }
